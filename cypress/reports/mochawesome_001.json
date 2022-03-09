@@ -1,23 +1,80 @@
 {
   "stats": {
-    "suites": 0,
-    "tests": 0,
-    "passes": 0,
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-02-23T17:31:11.051Z",
-    "end": "2022-02-23T17:31:11.055Z",
-    "duration": 4,
-    "testsRegistered": 0,
-    "passPercent": null,
-    "pendingPercent": null,
+    "start": "2022-03-08T13:02:37.848Z",
+    "end": "2022-03-08T13:02:42.805Z",
+    "duration": 4957,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false
   },
   "results": [
-    false
+    {
+      "uuid": "e258c804-9942-47c7-82fd-fd0e3e6c4f29",
+      "title": "",
+      "fullFile": "cypress/integration/checkout.ts",
+      "file": "cypress/integration/checkout.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b2a8c5e9-d9c3-4259-b62f-941f077bd872",
+          "title": "Checkout test suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Checkout your items",
+              "fullTitle": "Checkout test suite Checkout your items",
+              "timedOut": null,
+              "duration": 4703,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('div[class=inventory_item_name]')\n    .first()\n    .should('have.text', 'Sauce Labs Backpack');\ncy.get('div[class=inventory_item_price]')\n    .first()\n    .invoke('text')\n    .should('eq', '$29.99');\ncy.get('button[id=add-to-cart-sauce-labs-backpack]')\n    .click();\ncy.get('button[id=remove-sauce-labs-backpack]')\n    .should('have.text', 'Remove');\ncy.get('.shopping_cart_link').click();\ncy.url().should('include', '/cart.html');\ncy.get('[data-test=\"checkout\"]').click();\ncy.url().should('include', '/checkout-step-one.html');\ncy.get('.title')\n    .should('have.text', 'Checkout: Your Information');\ncy.get('[data-test=\"firstName\"]').type('Testfirstname');\ncy.get('[data-test=\"lastName\"]').type('Testlastname');\ncy.get('[data-test=\"postalCode\"]').type('te1st2');\ncy.get('[data-test=\"continue\"]').click();\ncy.url().should('include', '/checkout-step-two.html');\ncy.get('.title')\n    .should('have.text', 'Checkout: Overview');\ncy.get('div[class=inventory_item_name]')\n    .first()\n    .should('have.text', 'Sauce Labs Backpack');\ncy.get('div[class=inventory_item_price]')\n    .first()\n    .invoke('text')\n    .should('eq', '$29.99');\ncy.get('[data-test=\"finish\"]')\n    .should('be.visible');\ncy.get('[data-test=\"cancel\"]')\n    .should('be.visible');\ncy.get('.summary_info > :nth-child(2)')\n    .invoke('text')\n    .should('match', /^SauceCard #[\\d\\d\\d\\d\\d]/);\ncy.get('.summary_info > :nth-child(4)')\n    .should('have.text', 'FREE PONY EXPRESS DELIVERY!');\ncy.get('.summary_info > :nth-child(5)')\n    .should('have.text', 'Item total: $29.99');\ncy.get('.summary_info > :nth-child(6)')\n    .should('have.text', 'Tax: $2.40');\ncy.get('.summary_info > :nth-child(7)')\n    .should('have.text', 'Total: $32.39');\ncy.get('[data-test=\"finish\"]').click();\ncy.url().should('include', '/checkout-complete.html');\ncy.get('.title')\n    .should('have.text', 'Checkout: Complete!');\ncy.get('.pony_express')\n    .should('be.visible');\ncy.get('[data-test=\"back-to-products\"]')\n    .should('be.visible');\ncy.get('.complete-header')\n    .should('have.text', 'THANK YOU FOR YOUR ORDER');\ncy.get('.complete-text')\n    .should('have.text', 'Your order has been dispatched, and will arrive just as fast as the pony can get there!');",
+              "err": {},
+              "uuid": "0804ddd3-66da-403a-a00d-f60b2d56e212",
+              "parentUUID": "b2a8c5e9-d9c3-4259-b62f-941f077bd872",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0804ddd3-66da-403a-a00d-f60b2d56e212"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4703,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
   ],
   "meta": {
     "mocha": {

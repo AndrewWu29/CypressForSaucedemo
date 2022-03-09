@@ -104,5 +104,5 @@
   "include": [
     "**/*.ts",
     "**/*d.ts"
-  ]
+, "cypress/integration/loginpage"  ]
 }
